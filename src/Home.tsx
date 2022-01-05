@@ -11,7 +11,7 @@ import {
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import { createStyles, Theme } from '@material-ui/core/styles';
+import {createStyles, Theme} from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
@@ -46,6 +46,7 @@ import { CTAButton, MintButton } from './MintButton';
 import { AntiRug } from './AntiRug';
 import { getPhase, Phase, PhaseHeader } from './PhaseHeader';
 import { GatewayProvider } from '@civic/solana-gateway-react';
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const ConnectButton = styled(WalletDialogButton)`
   width: 100%;
@@ -475,6 +476,20 @@ const Home = (props: HomeProps) => {
         0.01
   );
 
+  const styles = {
+    root: {
+      padding: 24,
+      backgroundColor: '#151A1F',
+      opacity:0.7,
+      borderRadius: 6,
+      '&:hover': {
+        opacity: 1,
+      },
+    }
+  };
+
+  const CustomPaper = withStyles(styles)(Paper);
+
   return (
     <Container style={{ marginTop: 100 }}>
       {fairLaunch && (
@@ -484,9 +499,9 @@ const Home = (props: HomeProps) => {
           setAlertState={setAlertState}
         />
       )}
-      <Container maxWidth="xs" style={{ position: 'relative' }}>
-        <Paper
-          style={{ padding: 24, backgroundColor: '#151A1F', borderRadius: 6 }}
+
+      <Container maxWidth="sm" style={{marginTop: 500, position: 'relative' }}>
+        <CustomPaper
         >
           <Grid container justifyContent="center" direction="column">
             <PhaseHeader
@@ -928,7 +943,7 @@ const Home = (props: HomeProps) => {
               <p>Balance: {(balance || 0).toLocaleString()} SOL</p>
             )} */}
           </Grid>
-        </Paper>
+        </CustomPaper>
       </Container>
 
       {fairLaunch && (

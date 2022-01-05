@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme: Theme) =>
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#384457',
+        backgroundImage: `url(${"./video/ape.mp4"})`,
         color: 'white',
         borderRadius: 5,
         fontSize: 10,
+        opacity:0.5
       },
     },
     done: {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderRadius: 5,
       fontWeight: 'bold',
       fontSize: 18,
+      opacity:0.5
     },
     item: {
       fontWeight: 'bold',
