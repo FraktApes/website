@@ -43,7 +43,6 @@ import {
 
 import { AlertState, formatNumber, getAtaForMint, toDate } from './utils';
 import { CTAButton, MintButton } from './MintButton';
-import { AntiRug } from './AntiRug';
 import { getPhase, Phase, PhaseHeader } from './PhaseHeader';
 import { GatewayProvider } from '@civic/solana-gateway-react';
 import withStyles from "@material-ui/core/styles/withStyles";
