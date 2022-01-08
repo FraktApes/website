@@ -80,7 +80,7 @@ const App = () => {
                   // overlay={string}                /* default -> null | e.g. "rgba(0,0,0,.4)" */
                   // className={string}              /* default -> null */
                   // nocookie={bool}                 /* default -> false | sets host to https:/*www.youtube-nocookie.com to avoid loading Google's cookies */
-                  playerOptions={{modestbranding:0}}          /* default -> {}  | https://developers.google.com/youtube/player_parameters*/
+                  playerOptions={{modestbranding:1}}          /* default -> {}  | https://developers.google.com/youtube/player_parameters*/
                   // onReady={func}                  /* default -> null | returns event with player object */
                   // onEnd={func}                    /* default -> null | returns event with player object */
                   // onPlay={func}                   /* default -> null | returns event with player object */

@@ -157,7 +157,7 @@ export const PhaseHeader = ({
       {phase === Phase.Unknown && !candyMachine && (
         <Header
           phaseName={'Loading...'}
-          desc={'Waiting for you to connect your wallet.'}
+          desc={'Please connect your wallet.'}
           date={undefined}
         />
       )}

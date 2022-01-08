@@ -643,7 +643,7 @@ const Home = (props: HomeProps) => {
             {!wallet.connected ? (
               <ConnectButton>
                 Connect{' '}
-                {[Phase.SetPrice].includes(phase) ? 'to bid' : 'to see status'}
+                {[Phase.SetPrice].includes(phase) ? 'to bid' : 'wallet'}
               </ConnectButton>
             ) : (
               <div>
