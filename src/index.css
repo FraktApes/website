@@ -1,6 +1,6 @@
 body {
-  /*background: #000000;*/
-  background-image: url("ape-3.webp");
+  background: #000000;
+  /*background-image: url("ape-3.webp");*/
   background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +8,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /*overflow: auto;*/
+  /*background: lime; !* Just to visualize the extent *!*/
 }
 
 code {

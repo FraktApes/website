@@ -491,16 +491,9 @@ const Home = (props: HomeProps) => {
   const CustomPaper = withStyles(styles)(Paper);
 
   return (
-    <Container style={{ marginTop: 100 }}>
-      {fairLaunch && (
-        <AntiRug
-          fairLaunch={fairLaunch}
-          isMinting={[isMinting, setIsMinting]}
-          setAlertState={setAlertState}
-        />
-      )}
+    <Container style={{ marginTop: 100}}>
 
-      <Container maxWidth="sm" style={{marginTop: 500, position: 'relative' }}>
+      <Container maxWidth="sm" style={{marginTop: 400}}>
         <CustomPaper
         >
           <Grid container justifyContent="center" direction="column">
@@ -946,59 +939,6 @@ const Home = (props: HomeProps) => {
         </CustomPaper>
       </Container>
 
-      {fairLaunch && (
-        <Container
-          maxWidth="xs"
-          style={{ position: 'relative', marginTop: 10 }}
-        >
-          <div style={{ margin: 20 }}>
-            <Grid container direction="row" wrap="nowrap">
-              <Grid container md={4} direction="column">
-                <Typography variant="body2" color="textSecondary">
-                  Bids
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="textPrimary"
-                  style={{ fontWeight: 'bold' }}
-                >
-                  {fairLaunch?.state.numberTicketsSold.toNumber() || 0}
-                </Typography>
-              </Grid>
-              <Grid container md={4} direction="column">
-                <Typography variant="body2" color="textSecondary">
-                  Median bid
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="textPrimary"
-                  style={{ fontWeight: 'bold' }}
-                >
-                  ◎{' '}
-                  {phase === Phase.AnticipationPhase || phase === Phase.SetPrice
-                    ? '???'
-                    : formatNumber.format(median)}
-                </Typography>
-              </Grid>
-              <Grid container md={4} direction="column">
-                <Typography variant="body2" color="textSecondary">
-                  Total raised
-                </Typography>
-                <Typography
-                  variant="h6"
-                  color="textPrimary"
-                  style={{ fontWeight: 'bold' }}
-                >
-                  ◎{' '}
-                  {formatNumber.format(
-                    (fairLaunch?.treasury || 0) / LAMPORTS_PER_SOL,
-                  )}
-                </Typography>
-              </Grid>
-            </Grid>
-          </div>
-        </Container>
-      )}
       <Snackbar
         open={alertState.open}
         autoHideDuration={6000}
