@@ -493,7 +493,7 @@ const Home = (props: HomeProps) => {
   return (
     <Container style={{ marginTop: 100}}>
 
-      <Container maxWidth="sm" style={{marginTop: 400}}>
+      <Container maxWidth="sm" style={{marginTop: 300}}>
         <CustomPaper
         >
           <Grid container justifyContent="center" direction="column">
