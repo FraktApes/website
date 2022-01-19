@@ -62,7 +62,7 @@ export function getPhase(
 
 const useStyles = makeStyles({
   tooltip: {
-    fontSize: "1em",
+    fontSize: "1.5em",
   },
 });
 

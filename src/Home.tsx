@@ -509,7 +509,7 @@ const Home = (props: HomeProps) => {
     const CustomGrid = withStyles(styles2)(Grid);
 
     return (
-        <Container style={{marginTop: 100}}>
+        <Container style={{marginTop: 50}}>
 
             <Container maxWidth="sm">
                 {/*<h1>Frakt Apes</h1>*/}
@@ -519,7 +519,7 @@ const Home = (props: HomeProps) => {
                 </CustomGrid>
             </Container>
 
-            <Container maxWidth="sm" style={{marginTop: 100}}>
+            <Container maxWidth="sm" style={{marginTop: 50}}>
                 <CustomPaper
                 >
                     <Grid container justifyContent="center" direction="column">
