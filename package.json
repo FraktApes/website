@@ -5,6 +5,7 @@
   "dependencies": {
     "@bundlr-network/client": "^0.2.4",
     "@civic/solana-gateway-react": "^0.4.6",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",

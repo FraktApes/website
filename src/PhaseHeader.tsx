@@ -6,6 +6,10 @@ import { toDate } from './utils';
 import { FairLaunchAccount } from './fair-launch';
 import { CandyMachineAccount } from './candy-machine';
 import { useWallet } from '@solana/wallet-adapter-react';
+import '@fortawesome/fontawesome-free/js/all.js';
+import {Tooltip} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
 export enum Phase {
   AnticipationPhase, // FL, AKA Phase 0
@@ -56,6 +60,12 @@ export function getPhase(
   return Phase.Unknown;
 }
 
+const useStyles = makeStyles({
+  tooltip: {
+    fontSize: "1em",
+  },
+});
+
 const Header = (props: {
   phaseName: string;
   desc: string;
@@ -63,15 +73,25 @@ const Header = (props: {
   status?: string;
 }) => {
   const { phaseName, desc, date, status } = props;
+  const classes = useStyles();
   return (
     <Grid container justifyContent="center">
-      <Grid xs={6} justifyContent="center" direction="column">
-        <Typography variant="h5" style={{ fontWeight: 600 }}>
+      <Grid xs={6} justifyContent="center" direction="column" style={{marginTop: 10}}>
+        <Typography variant="h4" style={{ fontWeight: 600 }}>
           {phaseName}
         </Typography>
-        <Typography variant="body1" color="textSecondary">
-          {desc}
-        </Typography>
+        <Grid container direction="row" >
+          <Typography variant="body1" color="textSecondary" style={{marginTop: 10}}>
+            {desc}
+          </Typography>
+          {(phaseName === "Frakt Ape") &&
+          <Tooltip classes={{tooltip: classes.tooltip}} title="Your gateway to the world of AI NFTs">
+            <IconButton >
+              <i className="far fa-question-circle fa-xs" ></i>
+            </IconButton>
+          </Tooltip>}
+        </Grid>
+
       </Grid>
       <Grid xs={6} container justifyContent="flex-end">
         <PhaseCountdown
@@ -165,7 +185,7 @@ export const PhaseHeader = ({
       {phase === Phase.Phase4 && (
         <Header
           phaseName={"Frakt Ape"}
-          desc={'+ Neuralism Pass Raffle Ticket'}
+          desc={'(incl. Neuralism Pass)'}
           date={candyMachine?.state.goLiveDate}
           status="LIVE"
         />
